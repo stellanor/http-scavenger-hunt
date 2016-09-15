@@ -1,4 +1,4 @@
-require_relative 'level_names'
+require_relative '../helpers/level_names'
 
 include LevelNames
 
