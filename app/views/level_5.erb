@@ -1,55 +1,33 @@
-## Welcome to Level 5
+<h2>Welcome to Level 5</h2>
+<p>Welcome! To continue past level 5, you'll need to register a new user with our site so you can log in to Level 6.</p>
+<h2>Time to learn about POST requests</h2>
+<p>So far you've been making GET requests, but GET requests are mostly for <em>receiving</em> data. Sometimes you need to <em>send</em> data to the server, like when you send a username and password to a website to register a new account.</p>
+<p>To send data to a server, we typically use a POST request. If you send a correctly formatted POST request to <code>/users</code> on this webserver you'll be able to register a new account. The most common way to issue a POST request to a webserver is an HTML form, but we're going to do it by hand.</p>
+<p>To do this you'll need a few things:</p>
+<ul>
+    <li>
+        <p>You need to use POST, not GET, in your request line (the first line).</p>
+    </li>
+    <li>
+        <p>Since you're sending content to the server now, you need to tell the server what format your content will be using.</p>
+        <p>Use the header <code>Content-Type: application/x-www-form-urlencoded</code> to tell the server that you're sending data in the same format a web form would.</p>
+    </li>
+    <li>
+        <p>Since you're sending content, you'll also need to tell the webserver how many characters you're sending. Use the <code>Content-Length: LENGTH</code> header where LENGTH is the number of characters you're sending.</p>
+    </li>
+    <li>
+        <p>The actual data you want to send will be in the body of the request. In a POST request, this is after the blank line.</p>
+        <p>Since we're using the "www-form-urlencoded"[1] format, your data should be in the form <code>key=value&amp;key2=value2</code>.</p>
+    </li>
+</ul>
+<p>Here's a hypothetical POST request where we post a new tweet to Twitter:</p>
+<pre><code>POST /status HTTP/1.1
+Host: twitter.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 16
 
-Welcome! To continue past level 5, you'll need to register a new user with our site
-so you can log in to Level 6.
-
-## Time to learn about POST requests
-
-So far you've been making GET requests, but GET requests are mostly for _receiving_
-data. Sometimes you need to _send_ data to the server, like when you send
-a username and password to a website to register a new account.
-
-To send data to a server, we typically use a POST request. If you send a correctly
-formatted POST request to "/users" on this webserver you'll be able to register a
-new account. The most common way to issue a POST request to a webserver is an HTML
-form, but we're going to do it by hand.
-
-To do this you'll need a few things:
-
- * You need to use POST, not GET, in your request line (the first line).
-
- * Since you're sending content to the server now, you need to tell the server
-   what format your content will be using.
-
-   Use the header "Content-Type: application/x-www-form-urlencoded" to tell the
-   server that you're sending data in the same format a web form would.
-
- * Since you're sending content, you'll also need to tell the webserver how many
-   characters you're sending. Use the "Content-Length: LENGTH" header where LENGTH
-   is the number of characters you're sending.
-
- * The actual data you want to send will be in the body of the request. In a POST
-   request, this is after the blank line.
-
-   Since we're using the "www-form-urlencoded"[1] format, your data should be in
-   the form key=value&key2=value2.
-
-
-Here's a hypothetical POST request where we post a new tweet to Twitter:
-
-  POST /status HTTP/1.1
-  Host: twitter.com
-  Content-Type: application/x-www-form-urlencoded
-  Content-Length: 16
-
-  tweet=helloworld
-
-## Registering a User
-
-To register a new user, send a POST request to /users. The server is expecting you
-to include two things in the data you send, "username" and "password". If you send
-the POST correctly you'll get back a response telling you you registered succesfully,
-along with the URL of Level 6.
-
-[1] https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms
-
+tweet=helloworld
+</code></pre>
+<h2>Registering a User</h2>
+<p>To register a new user, send a POST request to <code>/users</code>. The server is expecting you to include two things in the data you send, "username" and "password". If you send the POST correctly you'll get back a response telling you you registered succesfully, along with the URL of Level 6.</p>
+<p>[1] <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms">https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms</a></p>
