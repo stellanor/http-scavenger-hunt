@@ -1,0 +1,8 @@
+Ah, you made it! As you probably observed, you didn't get a 200 OK response when
+you visited <%= levels_path(@conn, :level_4) %>. You saw a 301 response.
+
+The 301 response you saw is known as a _redirect_. A redirect doesn't send
+you any data, it just gives you a new URL to visit in the "Location" header.
+It looks like you found that header, because you ended up here!
+
+You'll find level 5 at <%= levels_path(@conn, :level_5) %>.
