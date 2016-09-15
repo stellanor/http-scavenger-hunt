@@ -1,33 +1,24 @@
-def l(str)
-  '/levels/' + str
-end
+require_relative 'level_names'
 
-level_routes = [
-  '/',
-  l("one"),
-  l("2"),
-  l("iii"),
-  l("quatro"),
-  l("00000101")
-]
+include LevelNames
 
-get level_routes[0] do
+get level_path(0) do
   erb :'welcome'
 end
 
-get level_routes[1] do
+get level_path(1) do
 end
 
-get level_routes[2] do
+get level_path(2) do
 end
 
-get level_routes[3] do
+get level_path(3) do
 end
 
-get level_routes[4] do
+get level_path(4) do
 end
 
-get level_routes[5] do
+get level_path(5) do
 end
 
 get '/whatsgoingon' do
