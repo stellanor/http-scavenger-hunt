@@ -56,6 +56,10 @@ get level_path(5) do
   erb :'level_5'
 end
 
+# TODO: Level 6 -- requires session / cookies
+
+# TODO: Level 7 -- PUT user
+
 get '/the-end' do
   erb :'end'
 end
