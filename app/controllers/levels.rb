@@ -56,6 +56,10 @@ get level_path(5) do
   erb :'level_5'
 end
 
+get '/the-end' do
+  erb :'end'
+end
+
 # Deny requests to levels 1-4 that come from a browser 
 # (i.e. with a User-Agent header)
 (1..4).each do |i|
