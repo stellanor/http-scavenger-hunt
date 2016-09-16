@@ -67,7 +67,7 @@ end
 # Deny requests to levels 1-4 that come from a browser 
 # (i.e. with a User-Agent header)
 (1..4).each do |i|
-  get level_path(i), :agent => /.*/ do
+  get level_path(i) do
     status 400
     erb :'cheater'
   end
