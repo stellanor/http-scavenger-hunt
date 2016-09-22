@@ -1,8 +1,7 @@
 post '/users' do
   user = User.new(username: params[:username], password: params[:password])
   if user.save
-    # TODO: Respond with Level 6 route
-    200
+    erb :"users/create_success", locals: {user: user}
   else
     400
     erb :"users/create_error", locals: {user: user}
