@@ -14,6 +14,6 @@ post '/users/login' do
     response.set_cookie("user_id", :value => user.id)
   else
     status 401
-    "error"
+    "Could not login. Bad username and password?"
   end
 end
