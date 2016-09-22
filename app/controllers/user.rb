@@ -22,7 +22,7 @@ post '/users/login' do
 end
 
 get '/users/profile' do
-  user = User.find_by(id:, request.cookies(:user_id))
+  user = User.find_by(id: request.cookies(:user_id))
   if user
     erb :"users/profile"
   else
