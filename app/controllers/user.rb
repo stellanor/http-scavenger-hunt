@@ -12,6 +12,7 @@ post '/users/login' do
   user = User.find_by(username: params[:username], password: params[:password])
   if user
     response.set_cookie("user_id", :value => user.id)
+    erb :"users/login_success", locals: {user: user}
   else
     status 401
     "Could not login. Bad username and password?"
