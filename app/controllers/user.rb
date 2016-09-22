@@ -5,6 +5,6 @@ post '/users' do
     200
   else
     400
-    "Values for keys username and password must be provided\n"
+    "Error!\n#{user.errors.full_messages.join("\n")}\n\n"
   end
 end
