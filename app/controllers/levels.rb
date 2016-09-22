@@ -33,7 +33,7 @@ end
 # Level 3 expects a query parameter: ?secret=HellaTameableTransferProtocol
 get level_path(3) do
   secret = params[:secret]
-  if secret == "HellaTameableTransferProtocol"
+  if secret == LevelNames::LEVEL_3_SECRET
     erb :'levels/level_3'
   else
     status 403
@@ -58,12 +58,4 @@ end
 # it in a browser for easier reading
 get level_path(6) do
   erb :'levels/level_6'
-end
-
-# TODO: Level 7-- requires session / cookies
-
-# TODO: Level 8 -- PUT user
-
-get '/the-end' do
-  erb :'end'
 end
