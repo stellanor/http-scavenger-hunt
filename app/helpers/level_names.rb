@@ -8,7 +8,8 @@ module LevelNames
     PREFIX + "2",
     PREFIX + "iii",
     PREFIX + "quatro",
-    PREFIX + "00000101"
+    PREFIX + "onwards",
+    PREFIX + "00000110"
   ]
 
   def level_path(level_num)

@@ -50,19 +50,19 @@ get level_path(4) do
 end
 
 # This is the 301 redirect Location header from level 4
-get '/whatsgoingon' do
-  erb :'level_4_bounce'
-end
-
-# Level 5 has some 'splaining to do, so we suggested opening
-# it in a browser for easier reading
 get level_path(5) do
   erb :'level_5'
 end
 
-# TODO: Level 6 -- requires session / cookies
+# Level 5 has some 'splaining to do, so we suggested opening
+# it in a browser for easier reading
+get level_path(6) do
+  erb :'level_6'
+end
 
-# TODO: Level 7 -- PUT user
+# TODO: Level 7-- requires session / cookies
+
+# TODO: Level 8 -- PUT user
 
 get '/the-end' do
   erb :'end'
