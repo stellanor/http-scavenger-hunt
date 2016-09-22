@@ -7,3 +7,13 @@ post '/users' do
     erb :"users/create_error", locals: {user: user}
   end
 end
+
+post '/users/login' do
+  user = User.find_by(username: params[:username])
+  if user && user.password == params[:password]
+    response.set_cookie("user_id", :value => user.id)
+  else
+    status 401
+    "error"
+  end
+end
