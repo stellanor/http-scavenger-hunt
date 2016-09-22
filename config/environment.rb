@@ -24,12 +24,14 @@ require 'erb'
 # path helper functions to the templates, and also so that
 # cryptic level names like 'quatro' and 'iii' are not so
 # hard to read in here.
-require_relative '../app/helpers/level_names'
+require_relative '../app/helpers/path_helpers'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
+
+LEVEL_3_SECRET = "HellaTameableTransferProtocol"
 
 configure do
   # By default, Sinatra assumes that the root is the file that calls the configure block.

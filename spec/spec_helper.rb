@@ -9,14 +9,11 @@ ENV['RACK_ENV'] ||= 'test'
 
 require File.expand_path("../../config/environment", __FILE__)
 require 'rack/test'
-require 'capybara'
-require 'capybara/rspec'
-require_relative '../app/helpers/level_names'
 require 'database_cleaner'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
-  config.include LevelNames
+  config.include PathHelpers
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
@@ -35,5 +32,3 @@ end
 def app
   Sinatra::Application
 end
-
-Capybara.app = app.new

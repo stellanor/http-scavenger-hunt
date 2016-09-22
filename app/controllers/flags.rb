@@ -2,7 +2,7 @@
 # on helpers) because helpers don't work in the route
 # registration itself.
 
-include LevelNames
+include PathHelpers
 
 post flags_path do
   uid = request.cookies["user_id"]

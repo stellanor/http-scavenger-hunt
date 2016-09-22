@@ -1,4 +1,4 @@
-module LevelNames
+module PathHelpers
   PREFIX = '/levels/'
 
   LEVEL_PATHS = [
@@ -9,8 +9,6 @@ module LevelNames
     PREFIX + "onwards",
     PREFIX + "00000110"
   ]
-
-  LEVEL_3_SECRET = "HellaTameableTransferProtocol"
 
   def level_path(level_num)
     LEVEL_PATHS[level_num-1]
@@ -33,4 +31,4 @@ module LevelNames
   end
 end
 
-# not actually a helpers do
+helpers PathHelpers

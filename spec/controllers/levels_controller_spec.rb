@@ -18,7 +18,7 @@ describe "Levels Controller" do
   context "level 3" do
     context "with secret" do
       it "respond with 200" do
-        get level_path(3)+"?secret=#{LevelNames::LEVEL_3_SECRET}"
+        get level_path(3)+"?secret=#{LEVEL_3_SECRET}"
         expect(last_response).to be_ok
       end
     end
@@ -55,7 +55,7 @@ describe "Levels Controller" do
   end
 
   context "with a user agent" do
-    LevelNames::LEVEL_PATHS.each do |path|
+    PathHelpers::LEVEL_PATHS.each do |path|
       it "#{path} 400s if user agent is present" do
         header("User-Agent", "Foo")
         get path

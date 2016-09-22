@@ -2,7 +2,7 @@
 # on helpers) because helpers don't work in the route
 # registration itself.
 
-include LevelNames
+include PathHelpers
 
 before "/levels/*", :agent => /^.+$/ do
   halt 400, erb(:'cheater')
@@ -26,7 +26,7 @@ end
 # Level 3 expects a query parameter: ?secret=HellaTameableTransferProtocol
 get level_path(3) do
   secret = params[:secret]
-  if secret == LevelNames::LEVEL_3_SECRET
+  if secret == LEVEL_3_SECRET
     erb :'levels/level_3'
   else
     status 403

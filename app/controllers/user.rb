@@ -2,7 +2,7 @@
 # on helpers) because helpers don't work in the route
 # registration itself.
 
-include LevelNames
+include PathHelpers
 
 post user_create_path do
   user = User.new(username: params[:username], password: params[:password])
