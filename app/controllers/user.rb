@@ -9,8 +9,8 @@ post '/users' do
 end
 
 post '/users/login' do
-  user = User.find_by(username: params[:username])
-  if user && user.password == params[:password]
+  user = User.find_by(username: params[:username], password: params[:password])
+  if user
     response.set_cookie("user_id", :value => user.id)
   else
     status 401
