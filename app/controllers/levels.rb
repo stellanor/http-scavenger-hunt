@@ -9,7 +9,7 @@ before "/levels/*", :agent => /^.+$/ do
 end
 
 # Welcome: Designed to be viewed in the browser
-get level_path(0) do
+get "/" do
   erb :'welcome'
 end
 
