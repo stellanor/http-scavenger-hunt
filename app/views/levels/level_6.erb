@@ -1,8 +1,13 @@
-<h2>Welcome to Level 5</h2>
-<p>Welcome! To continue past level 5, you'll need to register a new user with our site so you can log in to Level 6.</p>
-<p>This response has a whole lot of HTML which is kind of hard to read in plain text. You might want to copy and paste this into a .html file and open it in Chrome for easy reading.</p>
+<h1>Welcome to Level 6</h1>
+
+<p>Welcome! To continue past level 6, you'll need to register a new user with our site so you can log in to Level 7.</p>
+
+<p>This response you're reading has a whole lot of HTML, which is kind of hard to read in plain text. You might want to copy and paste this into a .html file and open it in Chrome for easy reading.</p>
+
 <h2>Time to learn about POST requests</h2>
+
 <p>So far you've been making GET requests, but GET requests are mostly for <em>receiving</em> data. Sometimes you need to <em>send</em> data to the server, like when you send a username and password to a website to register a new account.</p>
+
 <p>To send data to a server, we typically use a POST request. If you send a correctly formatted POST request to <code>/users</code> on this webserver you'll be able to register a new account. The most common way to issue a POST request to a webserver is an HTML form, but we're going to do it by hand.</p>
 
 <p>Here's a hypothetical POST request where we post a new tweet to Twitter:</p>
@@ -33,5 +38,7 @@ tweet=helloworld
 </ul>
 
 <h2>Registering a User</h2>
+
 <p>To register a new user, go back to <code>nc</code> and send a POST request to <code>/users</code>. The server is expecting you to include two things in the data you send, "username" and "password". If you send the POST correctly you'll get back a response telling you you registered succesfully, along with the URL of Level 7.</p>
+
 <p>[1] <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms">https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms</a></p>

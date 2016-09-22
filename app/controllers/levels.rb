@@ -44,7 +44,7 @@ end
 # Level 4 is a redirect with a custom response body
 get level_path(4) do
   status 301
-  headers "Location" => "/whatsgoingon"
+  headers "Location" => level_path(5)
   content_type :text
   erb :'levels/level_4', layout: false
 end
@@ -54,7 +54,7 @@ get level_path(5) do
   erb :'levels/level_5'
 end
 
-# Level 5 has some 'splaining to do, so we suggested opening
+# Level 6 has some 'splaining to do, so we suggested opening
 # it in a browser for easier reading
 get level_path(6) do
   erb :'levels/level_6'

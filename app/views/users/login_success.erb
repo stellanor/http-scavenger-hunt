@@ -2,8 +2,8 @@
 
 <p>Congratulations, you have logged into your new account!</p>
 <p>
-    The next step will be to visit your profile page, /profile, now that you've logged in,
-    but when you make that GET request, how will the server know who you are?
+    The next step will be to visit your profile page now that you've logged in, but that
+    might be trickier than you think.
 </p>
 
 <p>
@@ -15,18 +15,21 @@
 <p>
     This is a problem when we want to use a site that requires us to login. If the server
     forgets who we are between requests, how can it know who we are as we move through the
-    site? Are we going to have to login again just to view our profile page?
-    That would certainly be a pain.
+    site? Are we going to have to login <em>again</em> just to view our profile page?
 </p>
 
 <p>
-    Luckily, we have a mechanism for this. Notice the 'Set-Cookie' header in the response
-    you've received. This is the server handing you a ticket of sorts. It contains information
-    about who you are, specifically, that you are user <%= user.id >. The next time you make a
-    request to the server, you should <em>hand that cookie back</em>. If you do, the server will
-    read the cookie you've sent and be able to determine that you must be user <%= user.id %>.
-    The cookie keeps track of your identity across multiple requests. It's a way of you reminding
-    the server of who you are everytime you meet it.
+    Luckily, we have a mechanism for this! Notice the 'Set-Cookie' header in the response
+    you've received. This is the server handing you a ticket of sorts. In this case, the server
+    has given you a cookie that contains information about who you are, specifically, that you
+    are user <%= user.id >. This is <em>your</em> cookie, just for you. No one else should have it.
+</p>
+
+<p>
+    The next time you make a request to the server, you should <em>hand that cookie back</em>.
+    If you do, the server will read the cookie you've sent and be able to determine that you must
+    be user <%= user.id %>. It's a way of you reminding the server of who you are everytime you
+    meet it.
 </p>
 
 <p>
@@ -34,4 +37,4 @@
     example: <code>Cookie: cookieyougaveme=delicious</code>.
 </p>
 
-<p>Follow this redirect to the /profile page, and make sure you let the server know who you are when you make the request.</p>
+<p>Follow this redirect to the the profile page, and make sure you let the server know who you are when you make the request.</p>
