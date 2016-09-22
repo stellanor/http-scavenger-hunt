@@ -5,6 +5,6 @@ post '/users' do
     200
   else
     400
-    "Error!\n#{user.errors.full_messages.join("\n")}\n\n"
+    erb :"users/create_error", locals: {user: user}
   end
 end
