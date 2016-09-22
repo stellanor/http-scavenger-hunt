@@ -12,10 +12,24 @@ require 'rack/test'
 require 'capybara'
 require 'capybara/rspec'
 require_relative '../app/helpers/level_names'
+require 'database_cleaner'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
   config.include LevelNames
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 end
 
 def app

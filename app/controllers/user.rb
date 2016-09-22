@@ -1,14 +1,14 @@
-post '/users' do
+post user_create_path do
   user = User.new(username: params[:username], password: params[:password])
   if user.save
     erb :"users/create_success", locals: {user: user}
   else
-    status 400
+    status 422
     erb :"users/create_error", locals: {user: user}
   end
 end
 
-post '/users/login' do
+post user_login_path do
   user = User.find_by(username: params[:username], password: params[:password])
   if user
     status 301
@@ -21,8 +21,8 @@ post '/users/login' do
   end
 end
 
-get '/users/profile' do
-  user = User.find_by(id: request.cookies(:user_id))
+get user_profile_path do
+  user = User.find_by(id: request.cookies['user_id'])
   if user
     erb :"users/profile"
   else

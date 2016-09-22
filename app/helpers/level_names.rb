@@ -16,6 +16,17 @@ module LevelNames
     LEVEL_PATHS[level_num-1]
   end
 
+  def user_create_path
+    "/users"
+  end
+
+  def user_login_path
+    "/users/login"
+  end
+
+  def user_profile_path
+    "/users/profile"
+  end
 end
 
 # not actually a helpers do
