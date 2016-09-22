@@ -1,4 +1,4 @@
-<h1>Hello <%= user.username>!</h1>
+<h1>Hello <%= user.username %>!</h1>
 
 <p>
     Well, you've done it. You've learned about GET requests, headers, redirects,
@@ -18,12 +18,12 @@
 
     <ul>
         <li>
-            You can issue a POST to '/flags' and it will plant a flag for you.
+            You can issue a POST to '<%= flags_path %>' and it will plant a flag for you.
             No data necessary, it'll figure out who you are based on your
             cookie.
         </li>
         <li>
-            You can issue a GET to '/flags' and it will show you a list of
+            You can issue a GET to '<%= flags_path %>' and it will show you a list of
             every student that's reached the end of this challenge and planted
             a flag. Make sure you can find yourself among their ranks.
         </li>

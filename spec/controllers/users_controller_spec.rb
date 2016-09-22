@@ -74,10 +74,11 @@ describe "Users Controller" do
     context "with cookie" do
       it "responds with 200" do
         uid = "1"
+        user = double(username: "foo")
 
         expect(User).to receive(:find_by)
           .with(id: uid)
-          .and_return(double)
+          .and_return(user)
 
         header("Cookie", "user_id=#{uid}")
         get user_profile_path

@@ -27,6 +27,10 @@ module LevelNames
   def user_profile_path
     "/users/profile"
   end
+
+  def flags_path
+    "/flags"
+  end
 end
 
 # not actually a helpers do

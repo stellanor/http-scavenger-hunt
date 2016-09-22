@@ -20,6 +20,12 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 
+# Level names are in a module so that we can provide
+# path helper functions to the templates, and also so that
+# cryptic level names like 'quatro' and 'iii' are not so
+# hard to read in here.
+require_relative '../app/helpers/level_names'
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 

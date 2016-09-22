@@ -1,3 +1,9 @@
+# We are using an actual vanilla module here (not just relying
+# on helpers) because helpers don't work in the route
+# registration itself.
+
+include LevelNames
+
 post user_create_path do
   user = User.new(username: params[:username], password: params[:password])
   if user.save
@@ -24,7 +30,7 @@ end
 get user_profile_path do
   user = User.find_by(id: request.cookies['user_id'])
   if user
-    erb :"users/profile"
+    erb :"users/profile", locals: {user: user}
   else
     status 401
     "Cannot find user. Did you give me a cookie...?"

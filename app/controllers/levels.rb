@@ -1,13 +1,6 @@
-# Level names are in a module so that we can provide
-# path helper functions to the templates, and also so that
-# cryptic level names like 'quatro' and 'iii' are not so
-# hard to read in here.
-#
 # We are using an actual vanilla module here (not just relying
 # on helpers) because helpers don't work in the route
 # registration itself.
-
-require_relative '../helpers/level_names'
 
 include LevelNames
 
