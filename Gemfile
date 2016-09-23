@@ -12,6 +12,8 @@ gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
 
+gem 'thin'
+
 gem 'shotgun'
 
 gem 'database_cleaner'
