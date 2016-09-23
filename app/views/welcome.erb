@@ -1,8 +1,7 @@
 <h1>Welcome</h1>
+
 <!--
-    TODO: explain how to use netcat to make a GET request.
-    TODO: Test if we need `nc -c` for CRLFs, we did with Phoenix, perhaps sinatra is more forgiving,
-    but we might need to play it safe, especially if we're on different HTTP servers (it'll be
-    unicorn, not thin, on heroku)
+nc -c is necessary for thin, likely unicorn. we should have them use it
 -->
+
 <p>echo $EXPLANATION</p>
