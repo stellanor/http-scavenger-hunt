@@ -2,6 +2,6 @@
 
 <ul>
   <% flags.each do |flag| %>
-  <li>flag.user.username<li>
+  <li><%= flag.user.username %> on <%= flag.created_at %><li>
   <% end %>
 </ul>
