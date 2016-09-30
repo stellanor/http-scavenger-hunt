@@ -22,3 +22,7 @@ group :test do
   gem 'rack-test'
   gem 'rspec', '~>3.0'
 end
+
+group :production do
+  gem 'foreman'
+end
