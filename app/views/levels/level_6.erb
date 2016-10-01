@@ -30,7 +30,7 @@ tweet=helloworld
         <p>We use the header <strong><code>Content-Type: application/x-www-form-urlencoded</code></strong> to tell the server that we're sending data in the same format a web form would.</p>
     </li>
     <li>
-        <p>Since we're sending content, we also need to tell the webserver how many characters we're sending. We use the <strong><code>Content-Length: LENGTH</code></strong> header where LENGTH is the number of characters we're sending.</p>
+        <p>Since we're sending content, we also need to tell the webserver how many characters we're sending. We use the <strong><code>Content-Length: LENGTH</code></strong> header where LENGTH is the number of characters we're sending. This only includes the data in the body of the request, not the headers.</p>
     </li>
     <li>
         <p>The actual data we want to send will be in the body of the request. In a POST request, this is <strong>after the blank line</strong>.</p>
