@@ -24,7 +24,7 @@ your instructor.
 <p>
     <pre>
         GET /profile HTTP/1.1
-        Location: mysocialnet.com
+        Host: mysocialnet.com
 
     </pre>
 </p>
@@ -46,8 +46,8 @@ your instructor.
         </li>
         <li>
             Any number of headers. Headers are just key-value pairs separate by a colon and
-            a space. In this case, we just have one header, which is "Location". It should be
-            set to the domain we're accessing. "Location" is the one <em>required</em> header,
+            a space. In this case, we just have one header, which is "Host". It should be
+            set to the domain we're accessing. "Host" is the one <em>required</em> header,
             so don't forget it.
         </li>
         <li>
@@ -103,7 +103,7 @@ your instructor.
     <pre>
         $ nc -c dbcapps.com 80
         GET /levels/one HTTP/1.1
-        Location: dbcapps.com
+        Host: dbcapps.com
 
     </pre>
 </p>
