@@ -8,17 +8,18 @@
 
 <p>So far you've been making GET requests, but GET requests are mostly for <em>receiving</em> data. Sometimes you need to <em>send</em> data to the server, like when you send a username and password to a website to register a new account.</p>
 
-<p>To send data to a server, we typically use a POST request. If you send a correctly formatted POST request to <code>/users</code> on this webserver you'll be able to register a new account. The most common way to issue a POST request to a webserver is an HTML form, but we're going to do it by hand.</p>
+<p>To send data to a server, we typically use a POST request. If you send a correctly formatted POST request to "/users" on this webserver you'll be able to register a new account. The most common way to issue a POST request to a webserver is an HTML form, but we're going to do it by hand.</p>
 
 <p>Here's a hypothetical POST request where we post a new tweet to Twitter:</p>
 
-<pre><code>POST /status HTTP/1.1
+<pre>
+POST /tweets HTTP/1.1
 Host: twitter.com
 Content-Type: application/x-www-form-urlencoded
 Content-Length: 16
 
 tweet=helloworld
-</code></pre>
+</pre>
 
 <p>You'll notice a few things above</p>
 <ul>
@@ -29,7 +30,7 @@ tweet=helloworld
         <p>We use the header <strong><code>Content-Type: application/x-www-form-urlencoded</code></strong> to tell the server that we're sending data in the same format a web form would.</p>
     </li>
     <li>
-        <p>Since we're sending content, we also need to tell the webserver how many characters we're sending. We use the <strong><code>Content-Length: LENGTH</code></strong> header where LENGTH is the number of characters we're sending.</p>
+        <p>Since we're sending content, we also need to tell the webserver how many characters we're sending. We use the <strong><code>Content-Length: LENGTH</code></strong> header where LENGTH is the number of characters we're sending. This only includes the data in the body of the request, not the headers.</p>
     </li>
     <li>
         <p>The actual data we want to send will be in the body of the request. In a POST request, this is <strong>after the blank line</strong>.</p>
@@ -39,6 +40,6 @@ tweet=helloworld
 
 <h2>Registering a User</h2>
 
-<p>To register a new user, go back to <code>nc</code> and send a POST request to <code>/users</code>. The server is expecting you to include two things in the data you send, "username" and "password". If you send the POST correctly you'll get back a response telling you you registered succesfully, along with the URL of Level 7.</p>
+<p>To register a new user, go back to <code>nc</code> and send a POST request to "/users". The server is expecting you to include two things in the data you send, "username" and "password". If you send the POST correctly you'll get back a response telling you you registered succesfully, along with the URL of Level 7.</p>
 
 <p>[1] <a href="https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms">https://en.wikipedia.org/wiki/POST_(HTTP)#Use_for_submitting_web_forms</a></p>

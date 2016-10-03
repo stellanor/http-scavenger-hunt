@@ -1,11 +1,13 @@
 <p>Success!</p>
 
-<p>It's time to move on to level 3, however, we've heard that we need to know a secret message to get in.</p>
+<p>It's time to move on to level 3, however, we've heard that we need to know a secret password to get in.</p>
 
-<p>The good news is, we know the secret: "<%= LEVEL_3_SECRET %>".</p>
+<p>
+    We know the server is looking for a parameter called "secret", and the secret
+    is "<%= LEVEL_3_SECRET %>". But how do we send it?
+</p>
+<p>
+    This might be a good time to look at HTTP query parameters.
+</p>
 
-<p>The bad news is, we don't know how to send it!</p>
-
-<p>This might be a good time to look at HTTP query parameters.</p>
-
-<p>You'll find Level 3 at: <pre><%= level_path 3 %></pre></p>
+<p>You'll find Level 3 at: "<%= level_path 3 %>"</p>

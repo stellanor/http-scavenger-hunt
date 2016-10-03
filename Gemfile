@@ -12,6 +12,8 @@ gem 'activerecord', '~>4.2.0'
 
 gem 'rake'
 
+gem 'thin'
+
 gem 'shotgun'
 
 gem 'database_cleaner'
@@ -19,4 +21,8 @@ gem 'database_cleaner'
 group :test do
   gem 'rack-test'
   gem 'rspec', '~>3.0'
+end
+
+group :production do
+  gem 'foreman'
 end

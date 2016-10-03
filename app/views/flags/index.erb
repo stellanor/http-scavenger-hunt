@@ -1,7 +1,7 @@
 <h1>Flags Planted:</h1>
 
 <ul>
-  <% flags.each do |flag| >
-  <li>flag.user.username<li>
+  <% flags.each do |flag| %>
+  <li><%= flag.user.username %> on <%= flag.created_at %></li>
   <% end %>
 </ul>

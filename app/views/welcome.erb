@@ -1,8 +1,114 @@
-<h1>Welcome</h1>
-<!--
-    TODO: explain how to use netcat to make a GET request.
-    TODO: Test if we need `nc -c` for CRLFs, we did with Phoenix, perhaps sinatra is more forgiving,
-    but we might need to play it safe, especially if we're on different HTTP servers (it'll be
-    unicorn, not thin, on heroku)
--->
-<p>echo $EXPLANATION</p>
+<h1>Welcome!</h1>
+
+<p>
+    Hello students! This challenge is going to be a little different than the others.
+    Instead of writing code, we're going to be interacting with an HTTP server. If you
+    haven't received a breakout on networking and a quick intro to HTTP, now's the time
+    to remind
+your instructor.
+</p>
+
+<p>
+    In HTTP, a <em>client</em> (ex. a browser) connects to a <em>server</em> (ex. Sinatra)
+    and sends it a request. For example, my web browser might request the URL "/profile"
+    from "mysocialnet.com" to get my profile page on a social networking site.
+</p>
+
+<p>
+    So what's a request look like? In truth, a request is just some text! All you're doing
+    when you type a URL into your browser, click a link, or submit a form, is telling
+    your web browser to assemble some text and send it off to an HTTP server. Here's
+    what the text of a request might look like for our profile page example above.
+</p>
+
+<p>
+    <pre>
+        GET /profile HTTP/1.1
+        Host: mysocialnet.com
+
+    </pre>
+</p>
+
+<p>
+    We're seeing a few important parts here.
+    <ol>
+        <li>
+            The HTTP method, in this case <strong>GET</strong>. There are a few others,
+            we'll get to those later.
+        </li>
+        <li>
+            The resource we're requesting. In this case "/profile" — this is the part of
+            the URL after the domain: mysocialnet.com<strong>/profile</strong>.
+        </li>
+        <li>
+            The version of HTTP we're using to make this request. We're going to use
+            1.1 the whole time.
+        </li>
+        <li>
+            Any number of headers. Headers are just key-value pairs separate by a colon and
+            a space. In this case, we just have one header, which is "Host". It should be
+            set to the domain we're accessing. "Host" is the one <em>required</em> header,
+            so don't forget it.
+        </li>
+        <li>
+            Last but not least, an empty line. That last empty line is your way of telling the
+            server that you've sent all the request information you have to send and you'd like
+            a response. (A full empty line means hitting return twice.)
+        </li>
+    </ol>
+</p>
+
+<p>
+    A response to your request might look like this:
+</p>
+
+<p>
+    <pre>
+        HTTP/1.1 200 OK
+        Server: nginx
+        Date: Sat, 01 Oct 2016 17:21:09 GMT
+        Content-Type: text/html;charset=utf-8
+        Content-Length: 9
+
+        Hi there!
+    </pre>
+</p>
+
+<p>
+    During this challenge we're going to do away with the browser. It'll be
+    <em>you</em> typing out requests to the server. This way, we get to learn
+    about HTTP, the foundation of the web, by interacting with it directly.
+</p>
+
+<p>
+    To do this, we'll use a tool called "netcat", it's called <code>nc</code> in your terminal.
+    You'll connect to this webserver on port 80 like so: <code>nc -c dbcapps.com 80</code>.
+    Port 80 is the default port for HTTP.
+</p>
+
+<p>
+    Once you connect, you can type in a request to the HTTP server. The response
+    will tell you how to get to the next level. Your challenge is to get through
+    all the levels and plant your flag at the end. Be sure to ask for help as you
+    go, but you'll need to figure out a lot of this yourself!
+</p>
+
+<p>
+    To begin, we're going to visit <code>http://dbcapps.com/levels/one</code>. Browser
+    support has been disabled, so we'll make an HTTP request to <code>/levels/one</code>
+    using <code>nc -c dbcapps.com 80</code>:
+</p>
+
+<p>
+    <pre>
+        $ nc -c dbcapps.com 80
+        GET /levels/one HTTP/1.1
+        Host: dbcapps.com
+
+    </pre>
+</p>
+
+<p>
+    The reponse you receive will direct you to the next level. You can Ctrl-C after
+    you receive the response to terminate the connection. Good luck!
+</p>

@@ -19,4 +19,11 @@ describe "Flags Controller" do
       end
     end
   end
+
+  context "flag listing" do
+    it "lists the flags planted" do
+      get flags_path
+      expect(last_response).to be_ok
+    end
+  end
 end
