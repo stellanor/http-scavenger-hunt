@@ -33,6 +33,8 @@ APP_NAME = APP_ROOT.basename.to_s
 
 LEVEL_3_SECRET = "HellaTameableTransferProtocol"
 
+HOST = ENV["APP_HOST"] || "localhost"
+
 configure do
   # By default, Sinatra assumes that the root is the file that calls the configure block.
   # Since this is not the case for us, we set it manually.

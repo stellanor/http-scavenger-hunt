@@ -82,7 +82,7 @@ your instructor.
 
 <p>
     To do this, we'll use a tool called "netcat", it's called <code>nc</code> in your terminal.
-    You'll connect to this webserver on port 80 like so: <code>nc -c dbcapps.com 80</code>.
+    You'll connect to this webserver on port 80 like so: <code>nc -c <%= HOST %> 80</code>.
     Port 80 is the default port for HTTP.
 </p>
 
@@ -94,16 +94,16 @@ your instructor.
 </p>
 
 <p>
-    To begin, we're going to visit <code>http://dbcapps.com/levels/one</code>. Browser
+    To begin, we're going to visit <code>http://<%= HOST %>/levels/one</code>. Browser
     support has been disabled, so we'll make an HTTP request to <code>/levels/one</code>
-    using <code>nc -c dbcapps.com 80</code>:
+    using <code>nc -c <%= HOST %> 80</code>:
 </p>
 
 <p>
     <pre>
-        $ nc -c dbcapps.com 80
+        $ nc -c <%= HOST %> 80
         GET /levels/one HTTP/1.1
-        Host: dbcapps.com
+        Host: <%= HOST %>
 
     </pre>
 </p>
