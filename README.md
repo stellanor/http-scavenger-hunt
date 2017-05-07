@@ -1,6 +1,8 @@
 # HTTP Scavenger Hunt
 
-A curriculum experiment for DBC Phase 2 Day 1--students learn HTTP through a step-by-step scavenger hunt. They must perform HTTP requests manually over a TCP connection created using netcat (`nc`).
+A curriculum experiment for DBC Phase 2 Day 1--students learn HTTP through a step-by-step scavenger hunt. They must perform HTTP requests manually over a TCP connection created using netcat (`nc`), with each response providing clues for the next.
+
+This "experiment" has been core curriculum for a while. It is deployed and playable [here](http://dbcapps.com/).
 
 ![Whoa](https://media.giphy.com/media/KJHINXxzWX7A4/giphy.gif)
 
